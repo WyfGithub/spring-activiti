@@ -30,7 +30,7 @@ public class ExclusiveProcessController {
     public String exclusiveProcess() {
         Map map = new HashMap();
         map.put("type",1);
-        map.put("opinion",2);
+        map.put("opinion",3);
         repositoryService.createDeployment().addClasspathResource("processes/ExclusiveProcess.bpmn").deploy();
         ProcessInstance pi = runtimeService.startProcessInstanceByKey("myProcess_Exclusive",map);
         Task task = taskService.createTaskQuery().processInstanceId(pi.getId()).singleResult();
